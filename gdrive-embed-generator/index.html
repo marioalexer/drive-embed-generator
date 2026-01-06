@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Drive Embed Video Link Tool</title>
+
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 script-src 'self';
+                 style-src 'self';
+                 frame-src https://drive.google.com;
+                 base-uri 'none';
+                 form-action 'none';">
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212">
+</head>
+
+<body>
+<main>
+
+  <a class="logo" href="https://nomad-idea.com/">
+    <img src="assets/logo.png" alt="Logo"
+         loading="lazy" decoding="async"
+         onerror="this.closest('a').style.display='none'">
+  </a>
+
+  <h1>Google Drive Embed Video Link Tool</h1>
+
+  <input
+    id="url"
+    type="text"
+    placeholder="Pega aquí el enlace público de Google Drive"
+    autocomplete="off">
+
+  <button id="generate">Generar</button>
+
+  <input
+    id="previewUrl"
+    type="text"
+    readonly
+    placeholder="Aquí aparecerá el enlace directo /preview">
+
+  <button id="copyPreview" disabled>Copiar enlace preview</button>
+
+
+  <textarea
+    id="output"
+    rows="6"
+    readonly
+    placeholder="Aquí aparecerá el código embebible"></textarea>
+
+  <div class="actions">
+    <button id="copy" disabled>Copiar codigo html para embeber</button>
+    <button id="preview" disabled>Probar video</button>
+  </div>
+
+  <div class="preview">
+<iframe
+  id="previewFrame"
+  loading="lazy">
+</iframe>
+
+  </div>
+
+  <noscript>Activa JavaScript para usar esta herramienta.</noscript>
+
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
+
